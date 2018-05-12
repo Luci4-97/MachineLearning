@@ -1,0 +1,104 @@
+import tensorflow as tf
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+class MLP(object):
+    def __init__(self):
+        # 网络参数
+        self.learning_rate = 0.0001  # 学习率
+        self.n_hidden_1 = 2  # 第一层神经元个数
+        self.n_input = 2  # 样本特征数
+        # 定义权值和偏置
+        self.Weights = {
+            'h1': tf.Variable(tf.random_normal([self.n_input, self.n_hidden_1])),
+            'out': tf.Variable(tf.random_normal([self.n_hidden_1, 1]))
+        }
+        self.biases = {
+            'h1': tf.Variable(tf.random_normal([self.n_hidden_1])),
+            'out': tf.Variable(tf.random_normal([1]))
+        }
+        self.model_path = "./model/model.ckpt"  # 模型保存路径
+        return
+
+    def __add_layer__(self, name, inputs, activation_function=None):
+        """
+        添加一个神经网络层
+        :param inputs: 输入数据
+        :param activation_function: 激活函数
+        :return: 该层输出
+        """
+        ys = tf.matmul(inputs, self.Weights[name]) + self.biases[name]
+        if activation_function is None:
+            outputs = ys
+        else:
+            outputs = activation_function(ys)
+        return outputs
+
+    def fit(self, X_train, y_train, max_iter=10000):
+        """
+        训练分类器
+        :param X_train:训练样本
+        :param y_train:训练标签
+        :return:
+        """
+        X = tf.placeholder(tf.float32, [None, 2])
+        y = tf.placeholder(tf.float32, [None, 1])
+        # 第一层 使用tanh代替hardlimit
+        layer1 = self.__add_layer__('h1', X, activation_function=None)
+        # 输出层
+        predict = self.__add_layer__('out', layer1, tf.nn.tanh)
+        # 定义损失函数
+        loss = tf.reduce_sum(tf.pow(predict - y, 2))
+        # 定义优化器
+        optimizer = tf.train.AdamOptimizer(learning_rate=self.learning_rate).minimize(loss)
+        # 定义保存器
+        saver = tf.train.Saver()
+        with tf.Session() as sess:
+            sess.run(tf.initialize_all_variables())
+            # 开始训练
+            for epoch in range(max_iter):
+                X_train = X_train.reshape((-1, 2))
+                y_train = y_train.reshape((-1, 1))
+                sess.run(optimizer, feed_dict={X: X_train, y: y_train})
+
+                if (epoch + 1) % 20 == 0:
+                    l = sess.run(loss, feed_dict={X: X_train, y: y_train})
+                    print("Epoch:", '%04d' % (epoch + 1), "loss=", "{:.3f}".format(l))
+
+            print("Optimization Finished!")
+            training_loss = sess.run(loss, feed_dict={X: X_train, y: y_train})
+            print("Training loss=", training_loss, '\n')
+            res = np.around(np.abs(sess.run(predict, feed_dict={X: X_train}))).reshape((1, -1))
+            print("Training result: ", res)
+            saver.save(sess, self.model_path)
+            print("Model saved at: ", self.model_path)
+        return
+
+    def predict(self, X_test):
+        """
+        使用模型预测
+        :param X_test: 测试数据
+        :return:
+        """
+        # 重建网络
+        X = tf.placeholder(tf.float32, [None, 2])
+        layer1 = self.__add_layer__('h1', X, activation_function=None)
+        # 输出层
+        predict = self.__add_layer__('out', layer1, tf.nn.tanh)
+        saver = tf.train.Saver()
+        with tf.Session() as sess:
+            saver.restore(sess, self.model_path)  # 恢复模型
+            res = np.around(np.abs(sess.run(predict, feed_dict={X: X_test}))).reshape((1, -1))  # 预测
+            print(res)
+        return
+
+
+if __name__ == '__main__':
+    X_train = np.loadtxt('train_data.csv', dtype=np.float, delimiter=',')
+    y_train = np.loadtxt('train_label.csv', dtype=np.int, delimiter=',')
+    X_test = np.loadtxt('test_data.csv', dtype=np.float, delimiter=',')
+    y_test = np.loadtxt('test_label.csv', dtype=np.int, delimiter=',')
+    mlp = MLP()
+    # mlp.fit(X_train, y_train)
+    mlp.predict(X_test)
