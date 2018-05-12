@@ -88,6 +88,10 @@ class MLP(object):
         return
 
     def get_params(self):
+        """
+        取网络参数
+        :return: 权值，偏置
+        """
         saver = tf.train.Saver()
         with tf.Session() as sess:
             saver.restore(sess, self.model_path)  # 恢复模型

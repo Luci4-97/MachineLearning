@@ -14,10 +14,14 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="164" column="15" lean-forward="true" selection-start-line="164" selection-start-column="15" selection-end-line="164" selection-end-column="15" />
+            <state relative-caret-position="228">
+              <caret line="89" column="25" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#2401#4181#0" />
+                <element signature="e#3291#3661#0" />
+                <element signature="e#4085#5057#0" />
+                <element signature="e#4739#5125#0" />
               </folding>
             </state>
           </provider>
@@ -142,12 +146,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2494043" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2494043" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32965517" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.32965517" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="0" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
@@ -190,12 +193,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>163</line>
+          <line>167</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>138</line>
+          <line>142</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
@@ -216,6 +219,10 @@
           <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#2401#4181#0" />
+            <element signature="e#3291#3661#0" />
+            <element signature="e#4085#5057#0" />
+            <element signature="e#4739#5125#0" />
           </folding>
         </state>
       </provider>
@@ -320,10 +327,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="164" column="15" lean-forward="true" selection-start-line="164" selection-start-column="15" selection-end-line="164" selection-end-column="15" />
+        <state relative-caret-position="228">
+          <caret line="89" column="25" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#2401#4181#0" />
+            <element signature="e#3291#3661#0" />
+            <element signature="e#4085#5057#0" />
+            <element signature="e#4739#5125#0" />
           </folding>
         </state>
       </provider>
