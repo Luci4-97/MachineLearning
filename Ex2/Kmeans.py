@@ -5,7 +5,12 @@ import matplotlib.pyplot as plt
 
 
 def initialize(X,y):
-    # 从sklearn导入数据IRIS数据
+    """
+    初始化数据
+    :param X: 样本
+    :param y: 标签
+    :return: [样本, 标签, 初始聚类中心]
+    """
     data = X
     answer = y
     cent = data[:3, :]
@@ -13,8 +18,12 @@ def initialize(X,y):
 
 
 def cluster(data, means):
-    # 聚类
-    k = means.shape[0]
+    """
+    依据距离聚类
+    :param data: 样本
+    :param means: 均值
+    :return: 聚类结果
+    """
     dist = []
     for i in range(3):
         delta = data - np.tile(means[i, :], [data.shape[0], 1])
@@ -22,15 +31,21 @@ def cluster(data, means):
         delta = delta.sum(axis=1)
         dist.append(delta)
     dist = np.asarray(dist)
-    flag = []
+    label = []
     for i in range(data.shape[0]):
         tmp = np.array(dist[:, i])
-        flag.append(np.where(tmp == tmp.min())[0])
-    flag = np.array(flag)
-    return flag
+        label.append(np.where(tmp == tmp.min())[0])
+    label = np.array(label)
+    return label
 
 
 def mean(data, label):
+    """
+    计算均值
+    :param data: 样本
+    :param label: 聚类结果
+    :return: 均值
+    """
     means = []
     class1 = data[np.where(label == 0)[0], :]
     class2 = data[np.where(label == 1)[0], :]
@@ -46,6 +61,13 @@ def mean(data, label):
 
 
 def convergent(pre_cent, cur_cent, epsilon):
+    """
+    判断是否收敛
+    :param pre_cent: 前一次聚类中心
+    :param cur_cent: 当前聚类中心
+    :param epsilon: 阈值
+    :return: 是否收敛
+    """
     delta = cur_cent - pre_cent
     ret = (delta ** 2).sum(axis=0).sum()
     if ret < epsilon:
@@ -56,7 +78,12 @@ def convergent(pre_cent, cur_cent, epsilon):
 
 
 def kmeans(X,y):
-    # Initialize
+    """
+    kmeans入口
+    :param X: 样本
+    :param y: 标签
+    :return:
+    """
     data, answer, cent = initialize(X,y)
     label = cluster(data, cent)
     start_time = time.time()

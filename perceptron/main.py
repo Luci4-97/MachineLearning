@@ -89,7 +89,7 @@ class MLP(object):
 
     def get_params(self):
         """
-        取网络参数
+        输出网络参数
         :return: 权值，偏置
         """
         saver = tf.train.Saver()
@@ -106,7 +106,7 @@ class MLP(object):
         """
         使用模型预测
         :param X_test: 测试数据
-        :return:
+        :return: 预测结果
         """
         # 重建网络
         X = tf.placeholder(tf.float32, [None, 2])
@@ -133,13 +133,12 @@ class MLP(object):
         return result
 
 
-def draw_region(X, y, weight, bias):
+def draw(X, y, weight, bias):
     """
-    画出分类区域
+    画出结果
     :param X: 测试数据，每个样本两个特征
     :return:
     """
-    # 画图
     color = y.astype(np.str)
     color[np.where(y == 0)[0]] = 'r'
     color[np.where(y == 1)[0]] = 'c'
@@ -165,5 +164,5 @@ if __name__ == '__main__':
     # mlp.fit(X_train, y_train)
     result = mlp.predict(X_test)
     weight, bias = mlp.get_params()
-    draw_region(X_test, result, weight, bias)
+    draw(X_test, result, weight, bias)
     # pause = 1

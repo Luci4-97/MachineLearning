@@ -65,7 +65,13 @@ def train(X, max_iter=4000, learn_rate=1e-2):
 
 
 def draw(weight, bias, X):
-    # 画图
+    """
+    画图
+    :param weight: 权重
+    :param bias: 偏置
+    :param X: 样本
+    :return:
+    """
     plt.plot(X[:, 0], X[:, 1], 'c.', label="Original data")
     plt.plot(X[:, 0], weight * X[:, 0] + bias, label="Fitted line")
     plt.legend()
