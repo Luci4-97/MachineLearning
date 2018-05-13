@@ -14,15 +14,14 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="91" column="14" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
+            <state relative-caret-position="183">
+              <caret line="135" selection-start-line="135" selection-end-line="140" selection-end-column="7" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#128#746#0" />
                 <element signature="e#825#1168#0" />
                 <element signature="e#1231#3246#0" />
-                <element signature="e#4809#5314#0" />
-                <element signature="e#5348#5812#0" />
+                <element signature="e#3282#3713#0" />
               </folding>
             </state>
           </provider>
@@ -152,6 +151,7 @@
       <window_info content_ui="combo" id="Project" order="1" weight="0.2494043" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32965517" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.32965517" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="0" />
@@ -165,7 +165,6 @@
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="5" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -195,12 +194,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>167</line>
+          <line>166</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>142</line>
+          <line>141</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
@@ -224,8 +223,7 @@
             <element signature="e#128#746#0" />
             <element signature="e#825#1168#0" />
             <element signature="e#1231#3246#0" />
-            <element signature="e#4809#5314#0" />
-            <element signature="e#5348#5812#0" />
+            <element signature="e#3282#3713#0" />
           </folding>
         </state>
       </provider>
@@ -253,8 +251,7 @@
             <element signature="e#128#746#0" />
             <element signature="e#825#1168#0" />
             <element signature="e#1231#3246#0" />
-            <element signature="e#4809#5314#0" />
-            <element signature="e#5348#5812#0" />
+            <element signature="e#3282#3713#0" />
           </folding>
         </state>
       </provider>
@@ -282,8 +279,7 @@
             <element signature="e#128#746#0" />
             <element signature="e#825#1168#0" />
             <element signature="e#1231#3246#0" />
-            <element signature="e#4809#5314#0" />
-            <element signature="e#5348#5812#0" />
+            <element signature="e#3282#3713#0" />
           </folding>
         </state>
       </provider>
@@ -311,8 +307,7 @@
             <element signature="e#128#746#0" />
             <element signature="e#825#1168#0" />
             <element signature="e#1231#3246#0" />
-            <element signature="e#4809#5314#0" />
-            <element signature="e#5348#5812#0" />
+            <element signature="e#3282#3713#0" />
           </folding>
         </state>
       </provider>
@@ -411,15 +406,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="91" column="14" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
+        <state relative-caret-position="183">
+          <caret line="135" selection-start-line="135" selection-end-line="140" selection-end-column="7" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#128#746#0" />
             <element signature="e#825#1168#0" />
             <element signature="e#1231#3246#0" />
-            <element signature="e#4809#5314#0" />
-            <element signature="e#5348#5812#0" />
+            <element signature="e#3282#3713#0" />
           </folding>
         </state>
       </provider>
