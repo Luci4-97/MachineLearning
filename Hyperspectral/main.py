@@ -6,7 +6,7 @@ from sklearn.externals import joblib
 
 class import_data(object):
     """
-    导入数据
+    导入数据类
     """
 
     def __init__(self):
